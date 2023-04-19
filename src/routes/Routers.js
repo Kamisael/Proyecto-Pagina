@@ -6,7 +6,7 @@ import AllFoods from "../pages/AllFoods";
 import FoodDetails from "../pages/FoodDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
-import Contact from "../pages/Contact";
+import Mapa from "../pages/Mapa";
 import Login from "../Login";
 import Register from "../Register";
 import Dashboard from "../Dashboard";
@@ -24,7 +24,7 @@ const Routers = () => {
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/mapa" element={<Mapa />} />
       <Route exact path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
