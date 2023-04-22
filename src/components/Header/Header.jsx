@@ -4,58 +4,37 @@ import React, { useRef, useEffect, useState } from "react";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 import { NavLink, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 
-import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
-import Chat2 from "../UI/cart/Chat2";
+
+
 import "../../styles/header.css";
 
 const nav__links = [
   {
-    display: "HOME",
+    display: "Pagina libre",
     path: "/home",
   },
   {
-    display: "COMIDAS",
+    display: "Pagina privada 1",
     path: "/foods",
   },
   {
-    display: "CARRITO",
+    display: "Pagina privada 2",
     path: "/cart",
   },
-  {
-    display: "MAPA",
-    path: "/mapa",
-  },
+  
 ];
 
 const Header = () => {
   const menuRef = useRef(null);
   const headerRef = useRef(null);
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
-  const dispatch = useDispatch();
+  
+  
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
-  const toggleCart = () => {
-    dispatch(cartUiActions.toggle());
-  };
-  const [showChat, setShowChat] = useState(false); // Estado para controlar la visibilidad de Chat2
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        document.body.scrollTop > 80 ||
-        document.documentElement.scrollTop > 80
-      ) {
-        headerRef.current.classList.add("header__shrink");
-      } else {
-        headerRef.current.classList.remove("header__shrink");
-      }
-    });
-
-    return () => window.removeEventListener("scroll");
-  }, []);
+ 
+  
 
   return (
     <header className='header' ref={headerRef}>
@@ -77,30 +56,22 @@ const Header = () => {
                   {item.display}
                 </NavLink>
               ))}
-              <button onClick={() => setShowChat(!showChat)}className="chat-text">CHAT</button>
+              
             </div>
           </div>
 
           {/* ======== nav right icons ========= */}
           <div className='nav__right d-flex align-items-center gap-4'>
-            <span className='cart__icon' onClick={toggleCart}>
-              <i class='ri-shopping-basket-line'></i>
-              <span className='cart__badge'>{totalQuantity}</span>
-            </span>
-
             <span className='user'>
               <Link to='/login'>
                 <i class='ri-user-line'></i>
               </Link>
             </span>
 
-            <span className='mobile__menu' onClick={toggleMenu}>
-              <i class='ri-menu-line'></i>
-            </span>
+            
           </div>
         </div>
-        {/* Mostrar Chat2 si showChat es verdadero */}
-        {showChat && <Chat2 />}
+        
       </Container>
     </header>
   );

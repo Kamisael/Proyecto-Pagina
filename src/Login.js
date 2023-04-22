@@ -44,9 +44,7 @@ function Login() {
         <button className="login__btn login__google" onClick={signInWithGoogle}>
           Inicia Sesion Restaurante
         </button>
-        <div>
-          <Link to="/reset">Olvide la contraseña</Link>
-        </div>
+        
         <div>
           No tienes cuenta? <Link to="/register">Registrate!</Link>
         </div>
