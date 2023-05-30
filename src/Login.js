@@ -45,7 +45,7 @@ function Login() {
           Inicia Sesion Restaurante
         </button>
         <div>
-          <Link to="/reset">Olvide la contraseña</Link>
+          <Link to="/reset"></Link>
         </div>
         <div>
           No tienes cuenta? <Link to="/register">Registrate!</Link>

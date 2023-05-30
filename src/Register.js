@@ -47,7 +47,7 @@ function Register() {
           className="register__textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="ContraseÃ±a"
+          placeholder="Contraseña"
         />
         <button className="register__btn" onClick={register}>
           Registrate
@@ -60,7 +60,7 @@ function Register() {
         </button>
 
         <div>
-          Ya tienes cuenta? <Link to="/">Inicia Sesion</Link>
+          Ya tienes cuenta? <Link to="/login">Inicia Sesion</Link>
         </div>
       </div>
     </div>
